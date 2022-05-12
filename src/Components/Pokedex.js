@@ -2,10 +2,10 @@ import React from "react";
 import { useEffect, useState } from "react";
 
 function Pokedex() {
-  const [pokemonList, setPokemonList] = useState("");
+  const [pokemonList, setPokemonList] = useState([]);
 
   useEffect(() => {
-    fetch("https://pokeapi.co/api/v2/pokemon")
+    fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
       .then((response) => response.json())
       .then((data) => setPokemonList(data.results));
   }, []);
