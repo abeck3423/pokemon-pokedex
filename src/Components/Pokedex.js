@@ -1,5 +1,8 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import {
+  Link
+} from "react-router-dom";
 
 function Pokedex() {
   const [pokemonList, setPokemonList] = useState([]);
@@ -14,7 +17,15 @@ function Pokedex() {
     <div className="PokedexApp">
       <ul>
         {pokemonList.map((poke) => (
-          <li>{poke.name}</li>
+          <li>
+            <Link
+              to={{
+                pathname: `/pokemon/${poke.name}`
+              }}
+            >
+              {poke.name}
+            </Link>
+          </li>
         ))}
       </ul>
     </div>
