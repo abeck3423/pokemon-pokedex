@@ -3,7 +3,6 @@ import { capitalize } from "../helpers/strings";
 import Pokemon from "./Pokemon";
 
 function PokemonDetails(props) {
-    console.log(props.pokemon)
   return (
     <div>
       <h1>{capitalize(props.pokemon.name)}</h1>
