@@ -1,17 +1,15 @@
 import React from "react";
 import PokemonDetails from "./PokemonDetails";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 
-function Pokemon() {
-    const [pokemon, setPokemon] = useState({});
-    const { name } = useParams()
+function Pokemon(props) {
+    let [pokemon, setPokemon] = useState({});
 
     useEffect(() => {
-        fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
+        fetch(`https://pokeapi.co/api/v2/pokemon/${props.name}`)
         .then((response) => response.json())
         .then((data) => setPokemon(data) )
-    }, []);
+    }, [pokemon]);
 
     return (
         <div>
