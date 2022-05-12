@@ -1,8 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import {
-  Link
-} from "react-router-dom";
+import { Link } from "react-router-dom";
+import Pokemon from "./Pokemon";
 
 function Pokedex() {
   const [pokemonList, setPokemonList] = useState([]);
@@ -20,7 +19,7 @@ function Pokedex() {
           <li>
             <Link
               to={{
-                pathname: `/pokemon/${poke.name}`
+                pathname: `/pokemon/${poke.name}`,
               }}
             >
               {poke.name}
